@@ -3,11 +3,11 @@ import com.estrutura.fila.No;
 
 public class Main {
     public static void main(String[] args) {
-        Fila minhaFila = new Fila();
-        minhaFila.enqueue(new No("primeiro"));
-        minhaFila.enqueue(new No("segundo"));
-        minhaFila.enqueue(new No("terceiro"));
-        minhaFila.enqueue(new No("quarto"));
+        Fila<String> minhaFila = new Fila<>();
+        minhaFila.enqueue("Flamengo");
+        minhaFila.enqueue("Vasco");
+        minhaFila.enqueue("Botafogo");
+        minhaFila.enqueue("Fluminense");
 
         System.out.println(minhaFila);
         System.out.println(minhaFila.dequeue());

@@ -1,7 +1,7 @@
 package com.estrutura.fila;
 
-public class Fila {
-    private No refNoEntradaFila;
+public class Fila<T> {
+    private No<T> refNoEntradaFila;
 
     public Fila() {
         this.refNoEntradaFila = null;
@@ -11,7 +11,7 @@ public class Fila {
         return refNoEntradaFila == null? true : false;
     }
 
-    public Object first(){
+    public T first(){
         if(!this.isEmpty()){
            No primeiroNo = refNoEntradaFila;
            while(true){
@@ -21,12 +21,12 @@ public class Fila {
                 break;
                }
            }
-           return primeiroNo.getObject();
+           return (T) primeiroNo.getObject();
         }
         return null;
     }
 
-    public Object dequeue(){
+    public T dequeue(){
         if(!this.isEmpty()){
             No primeiroNo = refNoEntradaFila;
             No noAuxiliar = refNoEntradaFila;
@@ -40,12 +40,12 @@ public class Fila {
                 }
 
             }
-            return primeiroNo.getObject();
+            return (T) primeiroNo.getObject();
         }
         return null;
     }
 
-    public void enqueue(Object obj){
+    public void enqueue(T obj){
         No novoNo = new No(obj);
         novoNo.setRefNo(refNoEntradaFila);
         refNoEntradaFila = novoNo;
